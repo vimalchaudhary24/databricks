@@ -11,8 +11,9 @@ include:
 variables:
   catalog:
     description: The catalog to use
-  schema:
+  schema_src:
     description: The schema to use
+  schema_core:
 
 targets:
   dev:
