@@ -19,8 +19,7 @@ resources:
         - name: catalog
           default: ${var.catalog}
         - name: schema
-          default: ${var.schema}
-
+          default: ${var.schema_src}
       tasks:
         - task_key: notebook_task
           notebook_task:
