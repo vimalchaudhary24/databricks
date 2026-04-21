@@ -7,8 +7,8 @@ resources:
           email_notifications: {}
           notebook_task:
             base_parameters:
-              catalog: edl_dev
-              schema: databricks_ci_cd_src
+              catalog: ${var.catalog}
+              schema: ${var.schema_src} 
             notebook_path: ../src/bank_account/ingestion.ipynb
             source: WORKSPACE
           run_if: ALL_SUCCESS
@@ -20,8 +20,8 @@ resources:
           email_notifications: {}
           notebook_task:
             base_parameters:
-              catalog: edl_dev
-              'schema ': databricks_ci_cd_core
+              catalog: ${var.catalog}
+              schema: ${var.schema_core} 
             notebook_path: ../src/bank_account/New Notebook 2026-04-21 10_54_18.ipynb
             source: WORKSPACE
           run_if: ALL_SUCCESS
