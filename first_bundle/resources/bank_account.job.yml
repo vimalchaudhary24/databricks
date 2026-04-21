@@ -22,7 +22,7 @@ resources:
             base_parameters:
               catalog: ${var.catalog}
               schema: ${var.schema_core} 
-            notebook_path: ../src/bank_account/New Notebook 2026-04-21 10_54_18.ipynb
+            notebook_path: ../core/New Notebook 2026-04-21 10_54_18
             source: WORKSPACE
           run_if: ALL_SUCCESS
           timeout_seconds: 0
