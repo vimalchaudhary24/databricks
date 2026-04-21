@@ -1,0 +1,36 @@
+resources:
+  jobs:
+    bank_account:
+      name: bank_account
+      tasks:
+        - task_key: ingestion
+          email_notifications: {}
+          notebook_task:
+            base_parameters:
+              catalog: edl_dev
+              schema: databricks_ci_cd_src
+            notebook_path: ../src/bank_account/ingestion.ipynb
+            source: WORKSPACE
+          run_if: ALL_SUCCESS
+          timeout_seconds: 0
+          webhook_notifications: {}
+        - task_key: transform
+          depends_on:
+            - task_key: ingestion
+          email_notifications: {}
+          notebook_task:
+            base_parameters:
+              catalog: edl_dev
+              'schema ': databricks_ci_cd_core
+            notebook_path: ../src/bank_account/New Notebook 2026-04-21 10_54_18.ipynb
+            source: WORKSPACE
+          run_if: ALL_SUCCESS
+          timeout_seconds: 0
+      email_notifications:
+        no_alert_for_skipped_runs: false
+      max_concurrent_runs: 1
+      performance_target: PERFORMANCE_OPTIMIZED
+      queue:
+        enabled: true
+      timeout_seconds: 0
+      webhook_notifications: {}
