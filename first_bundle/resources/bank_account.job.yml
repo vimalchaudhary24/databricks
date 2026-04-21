@@ -22,7 +22,7 @@ resources:
             base_parameters:
               catalog: ${var.catalog}
               schema: ${var.schema_core} 
-            notebook_path: ../core/New Notebook 2026-04-21 10_54_18
+            notebook_path: /Workspace/Users/vimalchaudhary24@gmail.com/feature1_databricks/core/transform.ipynb
             source: WORKSPACE
           run_if: ALL_SUCCESS
           timeout_seconds: 0
